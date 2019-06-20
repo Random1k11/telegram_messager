@@ -1,0 +1,19 @@
+{
+  "result": [
+    {
+      "channel_post": {
+        "chat": {
+          "title": "Ставки",
+          "id": -1001157951267,
+          "type": "channel",
+          "username": "stavki321"
+        },
+        "date": 1561026200,
+        "message_id": 194,
+        "text": "Fgghh"
+      },
+      "update_id": 461082243
+    }
+  ],
+  "ok": true
+}
