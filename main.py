@@ -4,7 +4,6 @@ import json
 
 from dotenv import load_dotenv
 import os
-
 load_dotenv()
 
 
@@ -44,7 +43,7 @@ class TelegramBot:
         return r.json()
 
 
-    def send_image(self, chat_id):
+    def send_image_with_likes(self, chat_id):
         url = self.URL + "sendPhoto"
         files = {'photo': open('123.jpg', 'rb')}
         reply_inline_markup={"inline_keyboard":[[{'text': u'👍', 'callback_data': '/pic_vote 0'}, {'text': '👎', 'callback_data': '/pic_vote 1'}]]}
@@ -77,20 +76,10 @@ class TelegramBot:
             print(r.status_code, r.reason, r.content)
         except KeyError:
             pass
-        # chat_id = update['result'][-1]['channel_post']['chat']['id']
-        # data = {'chat_id': chat_id, 'message': 'hello', 'reply_markup': json.dumps(reply_inline_markup), 'message_id':'1477331485123946140'}
-        # url = self.URL + 'editMessageReplyMarkup'
-        # r = requests.post(url, data=data)
-        # print(r.status_code, r.reason, r.content)
 
 
 
 
 if __name__ == '__main__':
     bot = TelegramBot()
-    bot.send_image('@stavki321')
 
-    clb = bot.callback_handler()
-    # print(clb)
-    # update = bot.get_updates()
-    # print(update['result'])
