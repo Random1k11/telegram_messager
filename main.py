@@ -43,7 +43,7 @@ class TelegramBot:
         return r.json()
 
 
-    def send_image_with_likes(self, chat_id):
+    def send_image_with_likes(self, chat_id, num):
         url = self.URL + "sendPhoto"
         files = {'photo': open('123.jpg', 'rb')}
         reply_inline_markup={"inline_keyboard":[[{'text': u'👍', 'callback_data': '/pic_vote 0'}, {'text': '👎', 'callback_data': '/pic_vote 1'}]]}
@@ -65,16 +65,16 @@ class TelegramBot:
         update = bot.get_updates()
         try:
             callback_data = update['result'][-1]['callback_query']['message']['reply_markup']['inline_keyboard'][0][0]['callback_data']
-            id_ = update['result'][-1]['callback_query']['message']['message_id']
+            message_id = update['result'][-1]['callback_query']['message']['message_id']
             reply_inline_markup={"inline_keyboard":[[{'text': 'Погода', 'callback_data': '/pic_vote 0'}, {'text': 'Кофе', 'callback_data': '/pic_vote 1'}], [{'text': 'Кофе', 'callback_data': '/pic_vote 1'}]]}
-
             chat_id = update['result'][-1]['callback_query']['message']['chat']['id']
-            print(chat_id)
-            data = {'chat_id': chat_id, 'reply_markup': json.dumps(reply_inline_markup), 'message_id': '193'}
+            callback_data = update['result'][-1]['callback_query']['data']
+            print(callback_data)
+            data = {'chat_id': chat_id, 'reply_markup': json.dumps(reply_inline_markup), 'message_id': message_id}
             url = self.URL + 'editMessageReplyMarkup'
-            r = requests.post(url, data=data)
-            print(r.status_code, r.reason, r.content)
-        except KeyError:
+            # r = requests.post(url, data=data)
+            # print(r.status_code, r.reason, r.content)
+        except ValueError:
             pass
 
 
@@ -83,3 +83,6 @@ class TelegramBot:
 if __name__ == '__main__':
     bot = TelegramBot()
 
+    update = bot.get_updates()
+    bot.send_image_with_likes('-1001157951267', '123')
+    bot.callback_handler()

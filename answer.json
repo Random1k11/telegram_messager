@@ -1,19 +1,83 @@
 {
+  "ok": true,
   "result": [
     {
       "channel_post": {
         "chat": {
           "title": "Ставки",
-          "id": -1001157951267,
+          "username": "stavki321",
           "type": "channel",
-          "username": "stavki321"
+          "id": -1001157951267
         },
-        "date": 1561026200,
         "message_id": 194,
-        "text": "Fgghh"
+        "text": "Fgghh",
+        "date": 1561026200
       },
       "update_id": 461082243
+    },
+    {
+      "callback_query": {
+        "from": {
+          "first_name": "Dmitry",
+          "username": "Qazart",
+          "is_bot": false,
+          "language_code": "ru",
+          "id": 343968040
+        },
+        "chat_instance": "-9181405725315042880",
+        "data": "/pic_vote 0",
+        "message": {
+          "reply_markup": {
+            "inline_keyboard": [
+              [
+                {
+                  "callback_data": "/pic_vote 0",
+                  "text": "👍"
+                },
+                {
+                  "callback_data": "/pic_vote 1",
+                  "text": "👎"
+                }
+              ]
+            ]
+          },
+          "chat": {
+            "title": "Ставки",
+            "type": "channel",
+            "id": -1001157951267
+          },
+          "message_id": 197,
+          "photo": [
+            {
+              "file_id": "AgADAgADj6oxG_9jWUjdTvKccbRZkoXFtw8ABE3vxMRa6TDnhxQAAgI",
+              "width": 90,
+              "height": 87,
+              "file_size": 2221
+            },
+            {
+              "file_id": "AgADAgADj6oxG_9jWUjdTvKccbRZkoXFtw8ABLHc-0rdcXeYiBQAAgI",
+              "width": 320,
+              "height": 310,
+              "file_size": 28264
+            },
+            {
+              "file_id": "AgADAgADj6oxG_9jWUjdTvKccbRZkoXFtw8ABGQe1_AMd-CSiRQAAgI",
+              "width": 800,
+              "height": 775,
+              "file_size": 100543
+            },
+            {
+              "file_id": "AgADAgADj6oxG_9jWUjdTvKccbRZkoXFtw8ABLLCZU8YR44shhQAAgI",
+              "width": 855,
+              "height": 828,
+              "file_size": 114945
+            }
+          ],
+          "date": 1561033496
+        },
+        "id": "1477331483729133085"
+      },
+      "update_id": 461082269
     }
-  ],
-  "ok": true
+  ]
 }
