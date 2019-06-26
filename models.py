@@ -23,13 +23,13 @@ session = Session()
 
 
 class LikesTelegram(Base):
-
+    
     __tablename__ = "likes_telegram"
 
     id_ = Column(Integer, primary_key=True)
     chat_id = Column(Integer)
     message_id = Column(Integer)
-    user_id = Column(Integer)
+    user_id = Column(Integer, unique=True)
     callback_data = Column(String(20))
     createt_date = Column(DateTime, default=datetime.datetime.now())
 
@@ -48,22 +48,16 @@ class DataBase:
         session.add(row)
         session.commit()
 
-    def get_value_from_db(self, message_id, user_id, value):
-        val = getattr(session.query(LikesTelegram).filter(LikesTelegram.message_id == message_id, LikesTelegram.user_id == user_id).first(), value)
+    def get_value_from_db(self, id_user, value):
+        val = getattr(session.query(LikesTelegram).filter(LikesTelegram.id_user == id_user).first(), value)
         return val
 
     def get_numbers_of_likes_or_dislikes(self, likes_or_dislikes):
         numbers = session.query(LikesTelegram).filter(LikesTelegram.callback_data == likes_or_dislikes).count()
         return numbers
 
-    def check_existence_row_in_db(self, message_id, user_id):
-        return session.query(LikesTelegram).filter(LikesTelegram.message_id == message_id, LikesTelegram.user_id == user_id).first()
-
-
-    def delete_row_from_db(self, message_id, user_id):
-        row = session.query(LikesTelegram).filter(LikesTelegram.message_id == message_id, LikesTelegram.user_id == user_id).delete()
-        print('Удаляю!!!!!!!')
-        # session.delete(row)
-        session.commit()
+    def check_existence_row_in_db(self, user_id):
+        return session.query(LikesTelegram).filter(LikesTelegram.user_id == user_id).first()
 
 create_table(engine)
+    
