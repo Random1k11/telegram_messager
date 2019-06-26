@@ -1,83 +1,113 @@
 {
-  "ok": true,
   "result": [
     {
+      "update_id": 461082278,
       "channel_post": {
         "chat": {
-          "title": "Ставки",
-          "username": "stavki321",
+          "id": -1001157951267,
           "type": "channel",
-          "id": -1001157951267
+          "title": "Ставки"
         },
-        "message_id": 194,
-        "text": "Fgghh",
-        "date": 1561026200
-      },
-      "update_id": 461082243
+        "message_id": 207,
+        "photo": [
+          {
+            "file_size": 1377,
+            "width": 90,
+            "file_id": "AgADAgADBasxG5h5mEgbglyuGItaQURDhA8ABExUREDPYImbVmICAAEC",
+            "height": 76
+          },
+          {
+            "file_size": 15166,
+            "width": 320,
+            "file_id": "AgADAgADBasxG5h5mEgbglyuGItaQURDhA8ABIkChqNfq_PlWGICAAEC",
+            "height": 270
+          },
+          {
+            "file_size": 56260,
+            "width": 800,
+            "file_id": "AgADAgADBasxG5h5mEgbglyuGItaQURDhA8ABAsNy3wSZJRQVWICAAEC",
+            "height": 674
+          },
+          {
+            "file_size": 103633,
+            "width": 1280,
+            "file_id": "AgADAgADBasxG5h5mEgbglyuGItaQURDhA8ABINRuaBPQQ4bV2ICAAEC",
+            "height": 1078
+          },
+          {
+            "file_size": 131642,
+            "width": 1600,
+            "file_id": "AgADAgADBasxG5h5mEgbglyuGItaQURDhA8ABHklv7assxFhVGICAAEC",
+            "height": 1347
+          }
+        ],
+        "date": 1561476366
+      }
     },
     {
+      "update_id": 461082293,
       "callback_query": {
-        "from": {
-          "first_name": "Dmitry",
-          "username": "Qazart",
-          "is_bot": false,
-          "language_code": "ru",
-          "id": 343968040
-        },
-        "chat_instance": "-9181405725315042880",
         "data": "/pic_vote 0",
+        "id": "1477331486350565471",
+        "chat_instance": "-9181405725315042880",
         "message": {
           "reply_markup": {
             "inline_keyboard": [
               [
                 {
-                  "callback_data": "/pic_vote 0",
-                  "text": "👍"
+                  "text": "👍",
+                  "callback_data": "/pic_vote 0"
                 },
                 {
-                  "callback_data": "/pic_vote 1",
-                  "text": "👎"
+                  "text": "👎",
+                  "callback_data": "/pic_vote 1"
                 }
               ]
             ]
           },
           "chat": {
-            "title": "Ставки",
+            "id": -1001157951267,
             "type": "channel",
-            "id": -1001157951267
+            "title": "Ставки"
           },
-          "message_id": 197,
+          "message_id": 212,
           "photo": [
             {
-              "file_id": "AgADAgADj6oxG_9jWUjdTvKccbRZkoXFtw8ABE3vxMRa6TDnhxQAAgI",
+              "file_size": 2221,
               "width": 90,
-              "height": 87,
-              "file_size": 2221
+              "file_id": "AgADAgADs6oxG2YjmUh1gkU-IS0COobdtw8ABEMfvR-0B__Yn08AAgI",
+              "height": 87
             },
             {
-              "file_id": "AgADAgADj6oxG_9jWUjdTvKccbRZkoXFtw8ABLHc-0rdcXeYiBQAAgI",
+              "file_size": 28264,
               "width": 320,
-              "height": 310,
-              "file_size": 28264
+              "file_id": "AgADAgADs6oxG2YjmUh1gkU-IS0COobdtw8ABOl0KkMC6hEAAaBPAAIC",
+              "height": 310
             },
             {
-              "file_id": "AgADAgADj6oxG_9jWUjdTvKccbRZkoXFtw8ABGQe1_AMd-CSiRQAAgI",
+              "file_size": 100543,
               "width": 800,
-              "height": 775,
-              "file_size": 100543
+              "file_id": "AgADAgADs6oxG2YjmUh1gkU-IS0COobdtw8ABJ9jc9AS-54KoU8AAgI",
+              "height": 775
             },
             {
-              "file_id": "AgADAgADj6oxG_9jWUjdTvKccbRZkoXFtw8ABLLCZU8YR44shhQAAgI",
+              "file_size": 114945,
               "width": 855,
-              "height": 828,
-              "file_size": 114945
+              "file_id": "AgADAgADs6oxG2YjmUh1gkU-IS0COobdtw8ABJ5_m1UVXnJQnk8AAgI",
+              "height": 828
             }
           ],
-          "date": 1561033496
+          "date": 1561542990
         },
-        "id": "1477331483729133085"
-      },
-      "update_id": 461082269
+        "from": {
+          "is_bot": false,
+          "username": "Qazart",
+          "id": 343968040,
+          "language_code": "ru",
+          "first_name": "Dmitry"
+        }
+      }
     }
-  ]
+  ],
+  "ok": true
 }
