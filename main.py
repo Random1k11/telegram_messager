@@ -7,23 +7,23 @@ import os
 load_dotenv()
 
 
-class TelegramBot:
+class TelegramAPI:
 
 
     def __init__(self):
-        token = os.getenv('TOKEN')
-        self.URL = 'https://api.telegram.org/bot' + token + '/'
+        _token = os.getenv('TOKEN')
+        self._URL = 'https://api.telegram.org/bot' + _token + '/'
 
 
     def get_updates(self):
-        url = self.URL + 'getUpdates'
+        url = self._URL + 'getUpdates'
         r = requests.get(url)
         self.write_json(r.json())
         return r.json()
 
 
     def send_message(self, chat_id, text='Привет я БОТ'):
-        url = self.URL + 'sendMessage'
+        url = self._URL + 'sendMessage'
         answer = {'chat_id': chat_id, 'text':text}
         r = requests.post(url, json=answer)
         return r.json()
@@ -38,13 +38,13 @@ class TelegramBot:
         text = "Choose:"
         reply_inline_markup={"inline_keyboard":[[{'text': 'Like', 'callback_data': '/pic_vote 0'}, {'text': 'Кофе', 'callback_data': '/pic_vote 1'}], [{'text': 'Кофе', 'callback_data': '/pic_vote 1'}]]}
         data = {'chat_id': chat_id, 'text': text, 'reply_markup': json.dumps(reply_inline_markup)}
-        url = self.URL + 'sendMessage'
+        url = self._URL + 'sendMessage'
         r = requests.post(url, json=data)
         return r.json()
 
 
     def send_image_with_likes(self, chat_id, num):
-        url = self.URL + "sendPhoto"
+        url = self._URL + "sendPhoto"
         files = {'photo': open('123.jpg', 'rb')}
         reply_inline_markup={"inline_keyboard":[[{'text': u'👍', 'callback_data': '/pic_vote 0'}, {'text': '👎', 'callback_data': '/pic_vote 1'}]]}
         data = {'chat_id' : chat_id, 'reply_markup': json.dumps(reply_inline_markup)}
@@ -56,7 +56,7 @@ class TelegramBot:
         text = "Choose:"
         reply_inline_markup={"inline_keyboard":[[{'text': 'Погода', 'callback_data': '/pic_vote 0'}, {'text': 'Кофе', 'callback_data': '/pic_vote 1'}], [{'text': 'Кофе', 'callback_data': '/pic_vote 1'}]]}
         data = {'chat_id': chat_id, 'text': '1', 'reply_markup': json.dumps(reply_inline_markup)}
-        url = self.URL + 'sendMessage'
+        url = self._URL + 'sendMessage'
         r = requests.post(url, json=data)
         return r.json()
 
@@ -71,7 +71,7 @@ class TelegramBot:
             callback_data = update['result'][-1]['callback_query']['data']
             print(callback_data)
             data = {'chat_id': chat_id, 'reply_markup': json.dumps(reply_inline_markup), 'message_id': message_id}
-            url = self.URL + 'editMessageReplyMarkup'
+            url = self._URL + 'editMessageReplyMarkup'
             # r = requests.post(url, data=data)
             # print(r.status_code, r.reason, r.content)
         except ValueError:
@@ -81,7 +81,7 @@ class TelegramBot:
 
 
 if __name__ == '__main__':
-    bot = TelegramBot()
+    bot = TelegramAPI()
 
     update = bot.get_updates()
     bot.send_image_with_likes('-1001157951267', '123')
